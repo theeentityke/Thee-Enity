@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const nextConfig = {
+  images: {
+    domains: ['nowqwttrqtklrxgjgxid.supabase.co'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'nowqwttrqtklrxgjgxid.supabase.co',
+        port: '',
+        pathname: '/storage/v1/object/public/folder/photos/**',
+      },
+    ],
+  },
+}
 
-export default nextConfig;
+module.exports = nextConfig
