@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
         <div className="max-w-2xl mx-auto mb-4 sm:mb-6">
           <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-3 sm:p-4">
             <p className="text-white/80 text-xs sm:text-sm font-medium italic">
-              "Stop wasting time on manual tasks. Let our AI agents handle the work while you focus on growing your business."
+              &ldquo;Stop wasting time on manual tasks. Let our AI agents handle the work while you focus on growing your business.&rdquo;
             </p>
           </div>
         </div>
