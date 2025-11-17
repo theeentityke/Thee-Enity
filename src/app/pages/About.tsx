@@ -9,6 +9,7 @@ interface TeamMember {
   quote: string;
   image: string;
   portfolio: string;
+  portfolioTarget?: string;
 }
 
 interface Service {
@@ -20,27 +21,28 @@ interface Service {
 const team: TeamMember[] = [
   {
     name: "Collins Kipkirui Lagat",
-    role: "Co-founder & CEO",
+    role: "Co-founder",
     description: "Collins is the driving force and leader of Thee Entity. A visionary idealist with a strong background in backend development and DevOps, he brings both technical expertise and strategic leadership to the team. As a co-founder, he is passionate about creating practical, scalable solutions that bridge the gap between technology and real business needs, empowering enterprises to become globally competitive.",
     quote: "I believe that innovation should be accessible to everyone, not just large enterprises. Our mission at Thee Entity is to level the playing field.",
     image: "https://nowqwttrqtklrxgjgxid.supabase.co/storage/v1/object/public/folder/photos/Collins.jpeg",
     portfolio: "#"
   },
   {
-    name: "Brian Kareithi",
-    role: "Co-Founder | Backend Engineer & Cybersecurity Specialist",
-    description: "Brian combines his expertise in cybersecurity and backend engineering with a strategic mindset, ensuring that Thee Entity's solutions are not only secure but also market-ready. His deep understanding of digital threats helps build systems that are both safe and resilient. As a communicator, he bridges the gap between our technology and the businesses we serve, helping organizations understand how AI and automation can transform their operations.",
-    quote: "In a digital-first world, trust is everything. My goal is to make Thee Entity a brand that businesses can rely on for both security and growth.",
-    image: "https://nowqwttrqtklrxgjgxid.supabase.co/storage/v1/object/public/folder/photos/kareithi.jpg",
-    portfolio: "#"
-  },
-  {
     name: "Fatime Hashim Machira",
-    role: "Co-Founder | Frontend Developer, UI/UX Designer & Cybersecurity Enthusiast",
+    role: "Co-Founder",
     description: "As a frontend developer and UI/UX designer, Fatime is the creative force behind Thee Entity's user interfaces, ensuring they are not only beautiful but also intuitive and user-friendly. With her added passion for cybersecurity, she helps architect systems that are both engaging and secure. Her vision is to create digital experiences that don't just work, but delight and protect the users who depend on them.",
     quote: "I believe in building technology that is both beautiful and secure. We are not just solving problems — we are designing trustworthy digital experiences.",
     image: "https://nowqwttrqtklrxgjgxid.supabase.co/storage/v1/object/public/folder/photos/Fatime.jpg",
     portfolio: "#"
+  },
+  {
+    name: "Brian Kareithi",
+    role: "Co-Founder",
+    description: "Brian combines his expertise in cybersecurity and backend engineering with a strategic mindset, ensuring that Thee Entity's solutions are not only secure but also market-ready. His deep understanding of digital threats helps build systems that are both safe and resilient. As a communicator, he bridges the gap between our technology and the businesses we serve, helping organizations understand how AI and automation can transform their operations.",
+    quote: "In a digital-first world, trust is everything. My goal is to make Thee Entity a brand that businesses can rely on for both security and growth.",
+    image: "https://nowqwttrqtklrxgjgxid.supabase.co/storage/v1/object/public/folder/photos/kareithi.jpg",
+    portfolio: "https://kareithi.vercel.app",
+    portfolioTarget: "_blank"
   },
   {
     name: "Zeituna Hussein Kura",
@@ -273,7 +275,8 @@ const About: React.FC = () => {
               
               <div className="flex gap-3 pt-4">
                 <a 
-                  href={selectedMember.portfolio}
+                  href={selectedMember.portfolio.startsWith('http') ? selectedMember.portfolio : `https://${selectedMember.portfolio}`}
+                  target={selectedMember.portfolioTarget || '_self'}
                   className="bg-purple-500 text-white px-4 py-2 rounded-xl font-semibold hover:bg-purple-600 transition-all duration-300"
                 >
                   View Portfolio

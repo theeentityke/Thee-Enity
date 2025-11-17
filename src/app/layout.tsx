@@ -29,12 +29,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <DynamicBackground />
 
         {/* Navbar - Hidden during loading using CSS */}
-        <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+        <div className={`transition-opacity duration-600 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
           <Navbar />
         </div>
 
         {/* Scroll Progress Indicator */}
-        <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+        <div className={`transition-opacity duration-600 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
           <ScrollBar />
         </div>
 
